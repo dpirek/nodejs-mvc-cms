@@ -1,0 +1,24 @@
+<div>
+<div class="padding">
+    <ol class="breadcrumbs">
+    	<li><a href="#Page">Page</a></li>
+      <li><a href="#Template">Template</a></li>
+      <li>Edit</li>
+    </ol>
+    <h1>Edit <span>Temp</span></h1>
+</div><!-- 'padding' -->
+
+<form class="form" action="/campaign/submit" method="post">
+  <div class="clearfix action_bar">
+    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
+  </div>
+  <div class="padding_20">
+
+			<p class="clearfix">
+        <label for="name">
+          Content</label>
+          <textarea name="content">${template.content}</textarea>
+      </p>
+  </div><!-- 'padding' -->
+</form>
+</div>

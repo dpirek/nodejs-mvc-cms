@@ -1,0 +1,33 @@
+<div>
+
+	<div class="padding">
+		<ol class="breadcrumbs">
+      <li>Files</li>
+    </ol>
+    <h1>Files <span></span></h1>
+    <a href="#File/Upload" class="button">Upload</a>
+	</div>
+
+	<table class="width_full data_table">
+	  <thead>
+	    <tr>
+	      <th>
+	      	url
+	      </th>
+	      <th>
+	        full path
+	      </th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{each files}}
+	  <tr class="alt">
+			<td><a href="/content/files/${this}">${this}</a></td>
+			<td>/content/files/${this}</td>
+			<td><a href="${this}" class="right deleteFileBtn">delete</a></td>
+	  </tr>
+	  {{/each}}
+	  </tbody>
+	</table>
+</div>

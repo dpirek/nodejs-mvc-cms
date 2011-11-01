@@ -1,0 +1,30 @@
+<div class="padding">
+    <ol class="breadcrumbs">
+        <li>Comment</li>
+    </ol>
+    <h1>Blog <span>Comments</span></h1>
+</div><!-- 'padding' -->
+	<div class="padding clearfix">
+	{{html $item.paging()}}
+	</div>
+	<table class="width_full data_table">
+	  <thead>
+	    <tr>
+	      <th>
+	      	Comment
+	      </th>
+	      <th>
+	      	Email
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{each comments}}
+	  <tr class="alt">
+			<td>${comment}</td>
+			<td><a href="blog/${blogUrl}" target="_blank">${email}</a></td>
+	  </tr>
+	  {{/each}}
+	  </tbody>
+	</table>
+</div><!-- 'padding' -->

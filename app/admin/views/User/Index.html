@@ -1,0 +1,44 @@
+<div class="padding">
+    <ol class="breadcrumbs">
+        <li><a href="#Admin">Admin</a></li>
+        <li>Users</li>
+    </ol>
+    <h1>User <span>Accounts</span></h1>
+</div><!-- 'padding' -->
+
+<div class="padding">
+  
+  <div class="clearfix">
+  	<a href="#User/Create" class="button">Create New</a>
+  </div>
+</div>
+
+	<table class="width_full data_table">
+	  <thead>
+	    <tr>
+	      <th>
+	        Name
+	      </th>
+	      <th>
+	        Type
+	      </th>
+	      <th>
+	      	Email
+	      </th>
+	      <th>
+	        Date
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{each users}}
+	  <tr class="alt">
+			<td><a href="#User/View/${guid}">${name}</a></td>
+			<td>${userType}</td>
+			<td>${email}</td>
+			<td>{{html $item.formatDate(date)}}</td>
+	  </tr>
+	  {{/each}}
+	  </tbody>
+	</table>
+</div><!-- 'padding' -->

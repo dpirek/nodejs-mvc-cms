@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>${blog.title}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="alternate" type="application/rss+xml" href="/rss/" />
+  <link type="text/css" rel="stylesheet" href="/content/css/FNG.css" />
+	<link type="text/css" rel="stylesheet" href="/content/css/CMS.css" /> 
+</head>
+
+<body class="${blog.url}">
+	<div id="wrap">
+		{{html $item.htmlString(zone.header)}}
+    <div id="container">
+    	<h1>${blog.title}</h1>
+    	<p><em>{{html $item.date(blog.date)}}</em></p>
+    	{{html $item.htmlString(blog.body)}}
+    	
+    	<div class="box">
+    	<form action="/json/blog/createcomment" method="post">
+    		<input type="hidden" name="blogUrl" value="${blog.url}" />
+    		<p>
+    			<label>email</label>
+    			<input name="email" />
+    		</p>
+    		<p>
+    			<label>comment</label>
+    			<textarea name="comment"></textarea>
+    		</p>
+    		<div class="clearfix margin_bottom">
+    			<button class="button green">Submit</button>
+    		</div>
+    	</form>
+    	</div>
+    </div><!-- end of 'main' -->
+		{{html $item.htmlString(zone.footer)}}
+	</div>
+</body>
+</html>

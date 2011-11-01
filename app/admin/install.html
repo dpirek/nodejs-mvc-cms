@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Node.js MVC CMS</title>
+  <link href="content/css/1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="message_wrp"><div id="message_box" class="hide"></div></div>
+
+	<div class="hr" id="wrp1">
+    <form id="login_form" class="clearfix" onsubmit="return false" method="post">
+      <div class="padding_20">
+      	<h1>1. Create User</h1>
+        <p>
+          <label for="name">
+            User Name</label>
+          <input name="name" type="text" class="userName" style="width: 200px;">
+        </p>
+        <p>
+          <label for="password">
+            Password:</label>
+          <input type="password" name="password" style="width: 200px;">
+        </p>
+        
+				<div class="clearfix">
+					<button class="button submit left">Create</button>
+        </div>
+      </div>
+    </form>
+	</div><!-- end of 'hr' -->
+	
+	<div class="hr" id="wrp2">
+    <form id="" class="clearfix" onsubmit="return false" method="post">
+      <div class="padding_20">
+      	<h1>2. Create Index Page</h1>
+        <div class="clearfix">
+					<button class="button submit left" id="createPage">Create</button>
+        </div>
+      </div>
+    </form>
+	</div><!-- end of 'hr' -->
+	<div class="hr" id="wrp3">
+    <form id="" class="clearfix" onsubmit="return false" method="post">
+      <div class="padding_20">
+      	<h1>3. Login To Admin</h1>
+        <div class="clearfix">
+					<button class="button submit left" id="goToAdmin">Go</button>
+        </div>
+      </div>
+    </form>
+	</div><!-- end of 'hr' -->
+
+  <script src="library/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="library/jquery/jquery.tmpl.min.js" type="text/javascript"></script>
+  <script src="library/jquery/jquery.MVC.js" type="text/javascript"></script>
+
+  <script src="library/MVC.util.js" type="text/javascript"></script>
+  <script src="library/MVC.util.string.js" type="text/javascript"></script>
+  <script src="library/MVC.html.js" type="text/javascript"></script>
+  <script src="library/MVC.service.js" type="text/javascript"></script>
+  <script src="library/MVC.message.js" type="text/javascript"></script>
+  <script src="library/MVC.session.js" type="text/javascript"></script>
+  <script src="library/MVC.config.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+	(function(){
+
+		MVC.service.get({
+			url: 'user/list',
+	    success: function (d) {
+	    	
+	    	// This is really unsecure!
+	    	if(d.data.users.length !== 0){
+	    	
+	    	var form = $('#login_form'),
+						loginBtn = $('.submit', form),
+						createPageBtn = $('#createPage'),
+						goToAdminBtn = $('#goToAdmin');
+				
+				if($.browser.msie){
+					form.html('<div><p style="text-align: center;"><strong>Vas prohlizec momentalne nepodporujeme!</strong><br />Podporujeme tyto prohlizece: Firefox, Chrome, Safari</p></div>');
+				}
+					
+				// Bind save click.
+				loginBtn.click(function(){
+					
+					var fromData = form.serialize();
+						
+						// Add guid.
+						MVC.service.send({
+							data: fromData,
+							url: 'user/create',
+				      success: function (d) {
+				      	if(d.isSucessful){
+				      	
+				      		MVC.service.send({
+										data: fromData,
+										url: 'user/login',
+							      success: function (d) {
+											//window.location = '/admin';
+											$('#wrp1').fadeOut();
+				      			}
+				      		});
+				      	} else {
+				      		MVC.message.show({text: 'Could not create user!', hideDealy: 5000});
+				      	}	
+				      }
+				    });
+					return false;
+				});
+				
+				// Bind create page btn.
+				createPageBtn.click(function(){
+					
+					MVC.service.send({
+						data: {
+							body: '<h1>Welcome</h1>',
+							title: 'Welcome',
+							url: 'index',
+							user: ''
+						},
+						url: 'page/create',
+					  success: function (d) {
+					  	if(d.isSucessful){
+					  		$('#wrp2').fadeOut();
+					  	}
+					  }
+					});
+					
+					// Create footer
+					MVC.service.send({
+						data: {
+							content: '<p>footer</p>',
+							key: 'footer'
+						},
+						url: 'zone/create',
+					  success: function (d) {
+					  	
+					  }
+					});
+					
+					// Create header.
+					MVC.service.send({
+						data: {
+							content: '<p>header</p>',
+							key: 'header'
+						},
+						url: 'zone/create',
+					  success: function (d) {
+					  	
+					  }
+					});
+					
+					return false;
+				});
+				
+				// Last step.
+				goToAdminBtn.click(function(){
+				
+					window.location = '/admin';
+					return false;
+				});
+				
+	    	}
+	    }
+		});
+	}());
+  </script>
+
+</body>
+
+</html>

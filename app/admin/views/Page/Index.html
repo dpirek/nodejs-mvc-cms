@@ -1,0 +1,32 @@
+<div class="padding">
+    <ol class="breadcrumbs">
+        <li>Pages</li>
+    </ol>
+    <h1>Page <span>List</span></h1>
+</div><!-- 'padding' -->
+
+<div class="padding clearfix">
+	<a href="#Page/Create" class="button">Create New</a>
+	{{html $item.paging()}}
+	</div>
+	<table class="width_full data_table">
+	  <thead>
+	    <tr>
+	      <th>
+	      	Title
+	      </th>
+	      <th>
+	        Url
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{each pages}}
+	  <tr class="alt">
+			<td><a href="#Page/Edit/${url}"> ${title} </a></td>
+			<td><a href="/${url}" target="_blank">${url}</a></td>
+	  </tr>
+	  {{/each}}
+	  </tbody>
+	</table>
+</div><!-- 'padding' -->

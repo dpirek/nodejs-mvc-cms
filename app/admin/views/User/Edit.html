@@ -1,0 +1,37 @@
+<div>
+<div class="padding">
+    <ol class="breadcrumbs">
+    	<li><a href="#Admin">Admin</a></li>
+      <li><a href="#User">User</a></li>
+      <li>Edit</li>
+    </ol>
+    <h1>Edit User <span>Account</span></h1>
+</div><!-- 'padding' -->
+
+<form class="form" action="/campaign/submit" method="post">
+  <input name="guid" type="hidden" value="${user.guid}" />
+  <div class="clearfix action_bar">
+    <a href="#null" class="button right submit margin_right_5" id="saveBtn">Submit</a>
+    <a href="#User/View/${user.userId}" class="button right margin_right">Cancel</a>
+  </div>
+  <div class="padding">
+    <div class="two_col_form">
+     	<p class="clearfix">
+        <label for="name">
+          User Name</label>
+          <input name="name" value="${user.name}" />
+      </p>
+			<p class="clearfix">
+        <label for="name">
+          E-mail</label>
+          <input name="email" value="${user.email}" />
+      </p>
+			<p class="clearfix">
+        <label for="name">
+          password</label>
+          <input name="password" type="password" value="${user.password}" />
+      </p>
+		</div>
+  </div><!-- 'padding' -->
+</form>
+</div>

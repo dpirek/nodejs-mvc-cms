@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="alternate" type="application/rss+xml" href="/rss/" />
+  <link type="text/css" rel="stylesheet" href="/content/css/FNG.css" />
+	<link type="text/css" rel="stylesheet" href="/content/css/CMS.css" /> 
+</head>
+
+<body>
+	<div id="wrap">
+		{{html $item.htmlString(zone.header)}}
+	    <div id="container">
+			{{each blogs}}
+				<h1><a href="/blog/${url}">${title}</a></h1>
+				<p><em>{{html $item.date(date)}}</em></p>
+				{{html $item.truncate(body, 900)}}
+			{{/each}}
+	    </div><!-- end of 'main' -->
+			{{html $item.htmlString(zone.footer)}}
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div>
+	<div class="padding">
+	  <ol class="breadcrumbs">
+	  	<li><a href="#Admin">Admin</a></li>
+	    <li><a href="#User">User</a></li>
+	    <li>Edit: ${user.name}</li>
+	  </ol>
+	  <h1>Edit User: <span>${user.name}</span></h1>
+	</div><!-- 'padding' -->
+	
+	<form class="form" action="/campaign/submit" method="post">
+	  <input name="id" type="hidden" />
+	  <div class="clearfix action_bar">
+	  	<a href="#User/Edit/${user.guid}" class="button right margin_right_5">Edit</a>
+	  	<a href="#null" id="deleteBtn" class="button right margin_right_5 ">Delete</a>
+	  </div>
+	  
+		<div class="padding clearfix">
+			<p>
+				<strong>User Name</strong>
+				<span>${user.name}</span>
+			</p>
+			<p>
+				<strong>E-mail</strong>
+				<span>${user.email}</span>
+			</p>
+		</div>	
+	</form>
+</div>

@@ -1,0 +1,39 @@
+<div>
+<div class="padding">
+    <ol class="breadcrumbs">
+      <li><a href="#Blog">Blog</a></li>
+      <li>Edit</li>
+    </ol>
+    <h1>Edit <span>Blog</span></h1>
+</div><!-- 'padding' -->
+
+<form class="form">
+  <input name="_id" type="hidden" value="${blog._id}" />
+  <input name="url" type="hidden" value="${blog.url}" />
+
+  <div class="clearfix action_bar">
+    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
+    <a href="#null" class="button right submit margin_right_5" id="delete">Delete</a>
+    <a href="#Blog" class="button right submit margin_right_5">Cancel</a>
+  </div>
+  <div class="padding_20">
+			<!-- 
+			<p>{{html $item.date(blog.date)}}</p>
+			-->
+			<p class="clearfix">
+          <span>Url: <a href="/blog/${blog.url}" target="_blank">${blog.url}</a></span>
+      </p>
+			<p class="clearfix">
+        <label>
+          Title</label>
+          <input name="title" value="${blog.title}" />
+      </p>
+			<p class="clearfix">
+        <label>
+          Body</label>
+          <textarea name="body">${blog.body}</textarea>
+      </p>
+
+  </div><!-- 'padding' -->
+</form>
+</div>

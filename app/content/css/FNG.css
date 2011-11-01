@@ -1,0 +1,155 @@
+/* DEFAULTS
+------------------------------------------------------------*/
+
+/* body */
+html{height: 100%;}
+body {font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif; margin: 0; padding:0; font-size:100%;}
+
+/* form */
+input, button, textarea, select, optgroup, option {font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;}
+input[type="text"] {width: 200px; border: 1px solid #CCC;}
+input[type="password"] {width: 200px;border: 1px solid #CCC;}
+fieldset {margin: 0px 0 20px 0; padding: 10px 30px; border: 1px solid #CCC;}
+fieldset p {margin: 2px 10px 10px 0px;}
+fieldset label, label {display: block;}
+fieldset label.inline {display: inline;}
+legend {font-size: 1.1em; font-weight: 600; text-align:left; padding: 2px 4px 8px 4px;}
+input, button, textarea, select {*font-size: 100%;} /* purpose To enable resizing for IE @branch For IE6-Win, IE7-Win */
+textarea{ width:100%; height:100px;}
+
+/* table */
+table.data_table{border-collapse: collapse; border-spacing: 0; border-left: 1px solid #DBE1E6;}
+table.data_table td, table.data_table th{padding:5px 10px; font-size:11px; }
+table.data_table th{ background-color:#DBE1E6; color:#333;}
+table.data_table th.header{ color:#fff; }
+table.data_table td{ background-color:#f5f5f5; border-bottom: 1px solid #d4d8de; border-right: 1px solid #d4d8de;}
+table.data_table tr.alt td{ background-color:#fff;}
+table.data_table tr td.table_toolbar{ background-color:#6688a4;}
+
+/* text */
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+h1, h2, h3, h4, li, ul, p {text-align:left; font-size:100%; margin:0; padding:0; color:#333;}
+h1, h2, h3, h4, h3 a {font-size: 110%; font-weight: bold;}
+p, table{font-size:100%; line-height:160%;}
+h1 span{ color:#ccc;}
+
+/*lists*/
+ul, li{ list-style-type: none; margin:0; padding:0; text-align:left;}
+dl {text-align:left;}
+dl dt {text-align:left; margin-left:10px;}
+dl dt dd {text-align:left; margin-left:10px;}
+
+a {color:#105CB6;}
+a:hover {text-decoration:none;}
+
+/* other */
+img {border: none; }
+hr {height:1px; color:#F2F1E8; background: #F2F1E8; border:none;}
+caption,
+th {text-align: left;}
+
+/* reset
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td{ padding:0; margin:0} */
+
+/* REUSABLES
+------------------------------------------------------------*/
+/*message rounded box*/
+
+.highlight{background-color: #ffc;}
+
+/*paging*/
+.paging{margin:10px 10px 0px 0px;}
+.paging a, .paging span, .paging_top a, .paging_top span{display:block; 
+                                                         border:1px solid #888; float:left; padding:5px 10px; margin:1px; text-decoration:none; color:#888; font-size:11px;}
+.paging a {cursor:pointer;}
+.paging a.p{width:80px;}
+.paging a.n{width:60px;}
+.paging span{background-color:#888; color:#fff; font-weight:bold; border:1px solid #888; }
+.paging span.pg_dots{background-color:#fff; color:#888; font-weight:bold; border:1px solid #fff; }
+.paging a:hover, .paging_top a:hover{border:1px solid #222; background-color:#80A71F; color:#fff;}
+
+/*table paging*/
+.top_paging {margin-bottom:5px;}
+.top_paging .previous span, .top_paging .next span{display:block; height:17px; cursor:pointer;}
+.top_paging .previous, .top_paging .next{ display:block; margin-left:5px; float: left; height:17px; width:27px; border:1px solid #ccc;}
+.top_paging .previous span{font-weight: bold; background: url(../images/icons/arrow_left.gif) no-repeat 50% 70%;}
+.top_paging .next span{ font-weight: bold; background: url(../images/icons/arrow_right.gif) no-repeat 50% 70%;}
+.top_paging select{ padding:0; margin-right: 10px; margin-left: 10px;}
+.top_paging .previous, .top_paging .next{ -moz-background-clip:border; -moz-background-inline-policy:continuous; -moz-background-origin:padding; background:transparent url(http://d.yimg.com/a/i/ww/met/th/slate/gsprite_pg_slate_062209.gif) repeat-x scroll 0 0; border:1px solid #DBE1E6;}
+.top_paging_status_text{line-height:16px;}
+
+
+/* UTILITY
+------------------------------------------------------------*/
+/*clearfix*/
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/*layout*/
+.clr {clear: both; height: 1px; overflow: hidden; visibility:hidden; display: block;}
+.right{float:right}
+.left{float:left}
+.fl_none{float:none;}
+.cl{clear: both;}
+.hr{ padding-bottom:10px; margin-bottom:10px; border-bottom:1px solid #ccc;}
+
+/*text*/
+.red{color:Red}
+.white{ color:#fff}
+.grey { color: #ccc;}
+.green{color:#80A71F}
+.small{font-size:11px;}
+.alpha{filter:alpha(opacity=35); -moz-opacity:0.35; opacity: 0.35;}
+.alpha9{filter:alpha(opacity=90); -moz-opacity:0.90; opacity: 0.90;}
+.italic{font-style:italic;}
+.light_grety{color:#F2F1E8 }
+input.grayout{background-color: #eee; background-image:none; border:none;}
+
+/*grid*/
+.margin {margin:10px;}
+.padding_20{margin:20px;}
+.padding_left{padding-left:10px;}
+.padding_right{padding-right:10px;}
+.margin_top {margin-top:10px;}
+.margin_left{margin-left:10px;}
+.margin_bottom{margin-bottom:10px;}
+.margin_bottom_5{margin-bottom:5px;}
+.margin_right{ margin-right:10px;}
+.margin_right2{ margin-right:20px;}
+.padding{ padding:10px;}
+.padding_top{padding-top:10px;}
+.background_none{background:none;}
+.width_half{width:50%;}
+.width_full{width:100%;}
+
+.align_right{ text-align:right;}
+
+/*other*/
+.hide{display:none;}
+
+/*list*/
+ul.list{padding-left:15px;}
+ul.list li{list-style-type:disc;}
+
+/*icons*/
+.icon_add, .icon_edit, .icon_user, .icon_error
+{padding:0px 0px 0px 20px;}
+.icon_edit{background: url(../images/icons/icon_edit.gif) no-repeat 0px 50%;}
+.icon_add{background: url(../images/icons/icon_add.gif) no-repeat 0px 50%;}
+.icon_user{background: url(../images/icons/icon_user.png) no-repeat 4px 50%;}
+.icon_blog{background: url(../images/icons/icon_blog.png) no-repeat 0px 50%;}
+.icon_status{background: url(../images/icons/icon_done.png) no-repeat 4px 50%;}
+.icon_error{background: url(../images/icons/error_add.png) no-repeat 4px 50%;}
+.icon_idea{background: url(../images/icons/idea.png) no-repeat 4px 50%;}
+.icon_help{background: url(../images/icons/help_contents.gif) no-repeat 4px 50%;}

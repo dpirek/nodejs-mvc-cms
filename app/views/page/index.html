@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>${page.title}</title>
+  <link href="content/css/FNG.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="content/css/CMS.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="${page.url}">
+	<div id="wrap">
+		{{html $item.htmlString(zone.header)}}
+    <div id="container">
+      <div id="container_inner" class="clearfix">
+      	{{html $item.htmlString(page.body)}}
+      </div>
+		</div>
+	</div>
+	{{html $item.htmlString(zone.footer)}}
+</body>
+</html>

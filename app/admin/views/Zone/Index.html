@@ -1,0 +1,37 @@
+<div class="padding">
+    <ol class="breadcrumbs">
+        <li><a href="#Page">Pages</a></li>
+        <li>Zones</li>
+    </ol>
+    <h1>Zone <span>List</span></h1>
+</div><!-- 'padding' -->
+
+<div class="padding">
+  
+  <div class="clearfix">
+  	<a href="#Zone/Create" class="button">Create New</a>
+  	{{html $item.paging()}}
+  </div>
+</div>
+
+	<table class="width_full data_table">
+	  <thead>
+	    <tr>
+	      <th>
+	      	Key
+	      </th>
+	      <th>
+	        Content
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{each zones}}
+	  <tr class="alt">
+			<td><a href="#Zone/Edit/${key}"> ${key} </a></td>
+			<td>${content}</td>
+	  </tr>
+	  {{/each}}
+	  </tbody>
+	</table>
+</div><!-- 'padding' -->

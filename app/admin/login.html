@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>CMS Admin</title>
+  <link href="content/css/1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="message_wrp"><div id="message_box" class="hide"></div></div>
+  <div class="full_col" style="width:264px; margin:20px auto;">
+      <div id="content">
+        <div class="clearfix">
+            <form id="login_form" class="clearfix hide" onsubmit="return false" method="post">
+              <div class="padding_20">
+              	<div>
+              		<h1>User <span>Login</span></h1>
+              	</div>
+	              <p>
+	                <label for="name">
+	                  User Name</label>
+	                <input name="name" class="userName" style="width: 200px; font-size:20px; padding:10px;">
+	              </p>
+	              <p>
+	                <label for="password">
+	                  User Password:</label>
+	                <input type="password" name="password" style="width: 200px; font-size:20px; padding:10px;">
+	              </p>
+	              
+								<div class="clearfix">
+									<button class="button submit right">Submit</button>
+	              </div>
+              </div>
+            </form>
+        </div>
+      </div>
+  </div>
+  
+  <script src="library/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="library/jquery/jquery.tmpl.min.js" type="text/javascript"></script>
+  <script src="library/jquery/jquery.MVC.js" type="text/javascript"></script>
+
+  <script src="library/MVC.util.js" type="text/javascript"></script>
+  <script src="library/MVC.util.string.js" type="text/javascript"></script>
+  <script src="library/MVC.html.js" type="text/javascript"></script>
+  <script src="library/MVC.service.js" type="text/javascript"></script>
+  <script src="library/MVC.message.js" type="text/javascript"></script>
+  <script src="library/MVC.session.js" type="text/javascript"></script>
+  <script src="library/MVC.config.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+	(function(){
+		//window.location = 'test.html'; // Test mode.
+		var form = $('#login_form'),
+				loginBtn = $('.submit', form);
+		
+			if($.browser.msie){
+				form.html('<div><p style="text-align: center;"><strong>Your browser is not supported!</strong><br />Here are the supported browsers: Firefox, Chrome, Safari</p></div>');
+			}
+			
+			form.fadeIn('slow');
+
+		// Bind save click.
+		loginBtn.click(function(){
+			
+			var fromData = form.serialize();
+				
+				// Add guid.
+				MVC.service.send({
+					data: fromData,
+					url: 'user/login',
+		      success: function (d) {
+		      	if(d.isSucessful){
+		      		window.location = '/admin';
+		      	} else {
+		      		MVC.message.show({text: 'The login and password do not match!', hideDealy: 5000});
+		      	}	
+		      }
+		    });
+			return false;
+		});
+	}());
+  </script>
+
+</body>
+
+</html>
