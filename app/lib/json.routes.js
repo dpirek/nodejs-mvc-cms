@@ -1,11 +1,13 @@
-
 var fs = require('fs'),
 		c = require('../../config'),
 		querystring = require('querystring');
 
 // Router.
 exports.get = function(req, resp){
-
+	
+	// TODO: implement security layer.
+	// (skip comment posting).
+	
 	// To Get a Cookie.
 	var cookies = {};
 	req.headers.cookie && req.headers.cookie.split(';').forEach(function( cookie ) {
@@ -48,7 +50,7 @@ exports.get = function(req, resp){
 		
 		if(req.method === 'POST'){
 			
-			var _REQUEST = { },
+			var _REQUEST = {},
 					_CONTENT = '';
 			
 			req.addListener('data', function(chunk) {

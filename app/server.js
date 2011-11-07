@@ -2,8 +2,8 @@
 var http = require('http'),
     lightnode = require('lightnode'),
     c = require('../config'),
-    routes = require('./lib/routes'),
-    file = require('./lib/file'),
+    routes = require('./lib/mvc.routes'),
+    file = require('./lib/util.file'),
     jsonRoutes = require('./lib/json.routes');
 
 // Set a global obj for cross controll reference.
@@ -26,14 +26,10 @@ website.delegateRequest = function(req, resp) {
 	
   if (url.indexOf('/content') === 0){
   	return website;
-  } else if (url.indexOf('/test') === 0){
-  	return website;
   } else if (url.indexOf('/admin') === 0){
   	return website;
   } else if (url.indexOf('/upload') === 0){
   	return file.upload(req, resp);
-  } else if (url.indexOf('/web') === 0){
-  	return website;
   } else if (url.indexOf('/json') === 0){
 		return jsonRoutes.get(req, resp);
 	} else {
@@ -43,8 +39,6 @@ website.delegateRequest = function(req, resp) {
 
 // When a request comes to the ip server.
 server.addListener('request', function(req, resp) {
-	
-	// 3 - serve all requests with the directory server
 	website.receiveRequest(req, resp);
 });
 

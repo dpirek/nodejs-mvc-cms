@@ -71,19 +71,19 @@
 		MVC.service.get({
 			url: 'user/list',
 	    success: function (d) {
-	    	
+
 	    	// This is really unsecure!
-	    	if(d.data.users.length !== 0){
+	    	if(d.data.users.length === 0){
 	    	
 	    	var form = $('#login_form'),
-						loginBtn = $('.submit', form),
+						loginBtn = $('.submit'),
 						createPageBtn = $('#createPage'),
 						goToAdminBtn = $('#goToAdmin');
 				
 				if($.browser.msie){
 					form.html('<div><p style="text-align: center;"><strong>Vas prohlizec momentalne nepodporujeme!</strong><br />Podporujeme tyto prohlizece: Firefox, Chrome, Safari</p></div>');
 				}
-					
+				
 				// Bind save click.
 				loginBtn.click(function(){
 					

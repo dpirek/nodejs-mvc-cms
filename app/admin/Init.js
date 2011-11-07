@@ -121,7 +121,7 @@
 								allMenuItems = $('a', menuHtml),
 								currentMenuItem = $('a:[href^="#' + controllerName + '"]', menuHtml),
 								childMenuItemParent = $('a:[childUrls*="' + controllerName + '"]', menuHtml);
-												
+						
 						// Remove highliting.
 						allMenuItems.removeClass('selected');
 						
@@ -135,9 +135,17 @@
 							var sideNavHtml = $(html.menu(sideMenuObj[controllerName]));
 						
 							sideNav.html(sideNavHtml);
-							
+
 							var allSideMenuItems = $('a', sideNavHtml),
 									currentSideMenuItem = $('a:[href^="#' + controllerName + '"]', sideNavHtml);
+									
+							// Hack selector for Template controller.
+							if(controllerName === 'Template'){
+								if(d.actionObject.p1 === '1'){
+									d.actionObject.p1 = 'page.index';
+								}
+								currentSideMenuItem = $('a:[href="#' + controllerName + '/' + d.actionObject.action + '/' + d.actionObject.p1 + '"]', sideNavHtml);
+							}
 
 							// Remove highliting.
 							allSideMenuItems.removeClass('selected');
@@ -152,10 +160,6 @@
 
 						$('#header').fadeIn();
 						$('#main').fadeIn();
-						
-						// Build side Menu.
-						//menuHtml = $(html.menu(menuObj));
-						//sideMenu
 						
             messageElm.hide().text("");
           },

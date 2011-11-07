@@ -59,7 +59,7 @@
 				        success: function (d) {
 	
 				        	// Show message.
-				        	MVC.message.show({text: d.message, hideDealy: 2000});
+				        	MVC.message.show({text: 'Zone was saved!', hideDealy: 2000});
 				        }
 				      });
 				      
@@ -81,7 +81,7 @@
 									window.location.hash = 'Zone';
 									
 				        	// Show message.
-				        	MVC.message.show({text: d.message, hideDealy: 2000});
+				        	MVC.message.show({text: 'Zone was deleted.', hideDealy: 2000});
 				        }
 				      });
 				      
@@ -113,7 +113,7 @@
 							window.location.hash = 'Zone';
 							
 		        	// Show message.
-		        	MVC.message.show({text: d.message, hideDealy: 2000});
+		        	MVC.message.show({text: 'Zone was created!', hideDealy: 2000});
 		        }
 		      });
 		      

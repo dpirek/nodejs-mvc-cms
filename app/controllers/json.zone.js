@@ -1,6 +1,5 @@
 // Lib.
 var tmpl = require('jqtpl'),
-		ser = require('../lib/service'),
 		c = require('../../config'),
 		Mongolian = require("mongolian");
 

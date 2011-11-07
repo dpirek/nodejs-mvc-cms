@@ -112,14 +112,15 @@ exports.get = function(obj, callBack){
       // Chew.
       var newList = [];
       
-      list.forEach(function(d, i){
-      	
-      	// Mute password.
-      	d.password = 'not telling you :)';
-      
-      	newList.push(d);
-      });
-      
+      if(list){
+	      list.forEach(function(d, i){
+	      	
+	      	// Mute password.
+	      	d.password = 'not telling you :)';
+	      
+	      	newList.push(d);
+	      });
+      }
 			callBack({users: newList});
 		});
 		} else if(obj.action === 'update'){

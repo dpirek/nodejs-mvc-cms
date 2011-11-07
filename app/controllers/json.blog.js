@@ -1,6 +1,5 @@
 // Lib.
 var tmpl = require('jqtpl'),
-		ser = require('../lib/service'),
 		c = require('../../config'),
 		a = require('../lib/util.array'),
 		Mongolian = require("mongolian");
@@ -93,8 +92,11 @@ exports.get = function(obj, callBack){
 		callBack(obj.params);
 	} else if(obj.action === 'createcomment'){
 		
+		// TODO: implement security.
+		//obj.params.comment
+		
 		var now = new Date();
-	
+		
 		// Add date.
 		obj.params.date = now; //.toJSON();
 		

@@ -1,7 +1,6 @@
 
 // Libs.
 var tmpl = require('jqtpl'),
-		ser = require('../lib/service'),
 		c = require('../../config'),
 		Mongolian = require("mongolian");
 
@@ -75,49 +74,4 @@ exports.get = function(params, view, callBack){
 			
 		});
 	});
-
-	/*
-	ser.get('pages/detail', {url: pageUrl}, function(page){
-		
-		ser.get('zone/list', {}, function(zoneList){
-		
-			zones = zoneList.zone;
-		
-			// Merge model with template.
-			var content = tmpl.tmpl(view, {page: page.page}, helpers);
-			
-			// Spit content.
-			callBack(content);
-		});
-	});
-	
-	} else if(pageUrl === 'xxx'){
-	
-		// Get data through service layer.
-		ser.get('hypoteky/list', {}, function(hypoteky){
-		
-			// Merge model with template.
-			var content = tmpl.tmpl(view, hypoteky);
-			
-			// Spit content.
-			callBack(content);
-		});
-	
-	} else {
-	
-		//hypoteka-ceske-sporitelny
-	
-		// Get data through service layer.
-		ser.get('hypoteky/detail', {pageUrl: pageUrl}, function(hypoteka){
-			
-			console.log(hypoteka);
-			
-			// Merge model with template.
-			var content = tmpl.tmpl(view, hypoteka);
-			
-			// Spit content.
-			callBack(content);
-		});
-	}
-	*/
 };
