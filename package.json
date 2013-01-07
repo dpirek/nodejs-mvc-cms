@@ -5,6 +5,7 @@
   "dependencies": {
     "mongolian": "*",
     "jqtpl": "*",
+    "formidable": "*",
     "lightnode": "*"
   }
   "repository": {
@@ -12,7 +13,7 @@
     "url" : "https://github.com/dpirek/nodejs-mvc-cms.git"
   },
   "engines": {
-    "node": ">=0.6.0"
+    "node": ">=0.6.2"
   },
   "contributors": [
     "David Pirek <dpirek@gmail.com> (http://www.davidpirek.com)"
