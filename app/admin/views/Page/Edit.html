@@ -1,39 +1,43 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-      <li><a href="#Page">Page</a></li>
+  <div class="right_bar">
+    <h3>Page Info</h3>
+    <p>Preview <a href="/${page.url}" target="_blank">${page.url}</a></p>
+    
+    <h3>Keyword Density</h3>
+    
+    <div id="keywordDensityTemplate">
+    {{each stats.groupCount}}
+      ${key} ${percentage}% <br />
+    {{/each}}
+    </div>
+  </div>
+  
+  <div class="left_bar">
+    <ol class="breadcrumb">
+      <li><a href="#Page">Pages</a> <span class="divider">/</span></li>
       <li>Edit</li>
     </ol>
-    <h1>Edit <span>Page</span></h1>
-</div><!-- 'padding' -->
-
-<form class="form">
-  <input name="_id" type="hidden" value="${page._id}" />
-  <input name="url" type="hidden" value="${page.url}" />
-
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
-    <a href="#null" class="button right submit margin_right_5" id="delete">Delete</a>
-    <a href="#Page" class="button right submit margin_right_5">Cancel</a>
-  </div>
-  <div class="padding_20">
-
-			<p class="clearfix">
-        <label>
-          Url</label>
-          <span><a href="/${page.url}" target="_blank">${page.url}</a></span>
-      </p>
-			<p class="clearfix">
+  
+    <form class="form form-inline">
+      <input name="_id" type="hidden" value="${page._id}" />
+      <input name="url" type="hidden" value="${page.url}" />
+    
+      <div class="pull-right btn-group">
+          <a href="#null" class="btn" id="delete">Delete</a>
+          <a href="#Page" class="btn">Cancel</a>
+          <a href="#null" class="btn btn-primary" id="save">Save</a>
+      </div>
+    
+      <legend>Edit Page</legend>
+  
+    	<div class="control-group">
         <label>
           Title</label>
-          <input name="title" value="${page.title}" />
-      </p>
-			<p class="clearfix">
-        <label>
-          Body</label>
-          <textarea name="body">${page.body}</textarea>
-      </p>
-
-  </div><!-- 'padding' -->
-</form>
+          <input name="title" type="text" value="${page.title}" />
+      </div>
+    	<div class="control-group">
+        <textarea name="body">${page.body}</textarea>
+      </div>
+    </form>
+  </div>
 </div>

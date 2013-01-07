@@ -1,16 +1,10 @@
 // Lib.
 var tmpl = require('jqtpl'),
-		c = require('../../config'),
 		a = require('../lib/util.array'),
-		Mongolian = require("mongolian");
+		dbAcccess = require('../lib/db.access'),
+		c = require('../../config');
 
-// Db.
-var server = new Mongolian(c.config.dbConnection),
-		db = server.db(c.config.dbName);
-		
-if(c.config.dbConnection !== 'localhost'){
-	db.auth(c.config.dbUserName, c.config.dbPassword);
-}
+var db = dbAcccess.get();
 
 var blogs = db.collection("blogs"), 
 		comments = db.collection("comments");
@@ -66,7 +60,6 @@ exports.get = function(obj, callBack){
 	} else if(obj.action === 'view'){
 
 		blogs.findOne({ url: obj.params.p1 }, function(err, blog) {
-         			
 			callBack(blog);
 		});
 	} else if(obj.action === 'update'){

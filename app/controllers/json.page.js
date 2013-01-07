@@ -1,16 +1,10 @@
 // Lib.
 var tmpl = require('jqtpl'),
-		c = require('../../config'),
 		a = require('../lib/util.array'),
-		Mongolian = require("mongolian");
+		dbAcccess = require('../lib/db.access'),
+		c = require('../../config');
 
-// Db.
-var server = new Mongolian(c.config.dbConnection),
-		db = server.db(c.config.dbName);
-		
-if(c.config.dbConnection !== 'localhost'){
-	db.auth(c.config.dbUserName, c.config.dbPassword);
-}
+var db = dbAcccess.get();
 
 var pages = db.collection("pages");
 
@@ -42,7 +36,11 @@ exports.get = function(obj, callBack){
 	} else if(obj.action === 'view'){
 
 		pages.findOne({ url: obj.params.p1 }, function(err, page) {
-         			
+      
+      if(page) {
+        delete page._id;
+      }
+      
 			callBack(page);
 		});
 	} else if(obj.action === 'update'){
@@ -56,16 +54,26 @@ exports.get = function(obj, callBack){
 	
 	} else if(obj.action === 'create'){
 		
-		var now = new Date();
+		pages.findOne({ url: obj.params.url }, function(err, page) {
+      
+      if(page) {
+        callBack({}, {}, false);
+      } else {
+        
+        var now = new Date();
 		
-		// Add date.
-		obj.params.date = now;
-		
-		// Save to db.
-		pages.save(obj.params);
-		
-		// data
-		callBack(obj.params);
+    		// Add date.
+    		obj.params.date = now;
+    		
+        if(obj.params.url === '' || obj.params.title === ''){
+        	callBack(obj.params, {}, false);
+        } else {
+        	// Save to db.
+          pages.save(obj.params);
+          callBack(obj.params, {}, true);
+        }
+      }
+		});		
 	} else if(obj.action === 'delete'){
 		
 		pages.remove({url: obj.params.url})

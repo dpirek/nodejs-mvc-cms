@@ -9,14 +9,23 @@ exports.upload = function(req, res){
 	// Parse file.
   form.parse(req, function(err, fields, files) {
   	
+  	var fileName = '',
+        filePath = '/content/files/';
+  	
   	if(files.fileToUpload){
+      
+      // TODO: detect extension:
+      if(fields.fileName) {
+        fileName = fields.fileName;
+      } else {
+        fileName = files.fileToUpload.name;
+      }
 			
 			// Read file.			
 			fs.readFile(files.fileToUpload.path, function(err, data){
 
 		  	// Save file.
-				fs.writeFile(c.config.appPath + '/content/files/' + 
-					files.fileToUpload.name, 
+				fs.writeFile(c.config.appPath + filePath + fileName, 
 					data, 
 					'utf8', 
 					function (err) {
@@ -33,7 +42,11 @@ exports.upload = function(req, res){
 							res.writeHead(200, {'content-type': 'text/plain'});
 							res.write(JSON.stringify({
 								isSucessful: true,
-								message: 'File was saved!'
+								message: 'File was saved!',
+								data: {
+								  fileName: fileName,
+								  filePath: filePath
+								}
 							}));
 							res.end();
 						}

@@ -2,7 +2,7 @@
 var http = require('http'),
     lightnode = require('lightnode'),
     c = require('../config'),
-    routes = require('./lib/mvc.routes'),
+    routes = require('./lib/routes'),
     file = require('./lib/util.file'),
     jsonRoutes = require('./lib/json.routes');
 

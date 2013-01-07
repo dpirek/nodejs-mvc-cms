@@ -1,18 +1,10 @@
-
 // Libs.
 var tmpl = require('jqtpl'),
-		ser = require('../lib/service'),
 		s = require('../lib/util.string')
-		c = require('../../config'),
-		Mongolian = require("mongolian");
+		dbAcccess = require('../lib/db.access'),
+		c = require('../../config');
 
-// Db.
-var server = new Mongolian(c.config.dbConnection),
-		db = server.db(c.config.dbName);
-		
-if(c.config.dbConnection !== 'localhost'){
-	db.auth(c.config.dbUserName, c.config.dbPassword);
-}
+var db = dbAcccess.get();
 
 var blogs = db.collection("blogs"),
 		zonesDb = db.collection("zones");
@@ -60,7 +52,7 @@ exports.get = function(params, view, callBack){
 
 	
 	// Get zone list.
-	zonesDb.find().limit(50).toArray(function (err, zonesList) {
+	zonesDb.find().sort({date : -1}).limit(50).toArray(function (err, zonesList) {
   	
   	// Zone list.
   	zones = zonesList;
@@ -74,7 +66,7 @@ exports.get = function(params, view, callBack){
 		if(url === ''){
 
 			// Page.
-			blogs.find().limit(50).toArray(function (err, list) {
+			blogs.find().sort({date : -1}).limit(10).toArray(function (err, list) {
 
 				var content = tmpl.tmpl(view, {blogs: list, zone: zone}, helpers);
 				callBack(content);

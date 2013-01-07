@@ -64,7 +64,7 @@
 					}
 					
 					// File info message.
-					messageWrp.html('Name: ' + file.name + ' Size: ' + fileSize + ' Type: ' + file.type);
+					messageWrp.html('<span class="label label-warning">Name: ' + file.name + ' Size: ' + fileSize + ' Type: ' + file.type + '</span>');
         }
       });
 

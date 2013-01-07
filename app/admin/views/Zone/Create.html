@@ -1,32 +1,28 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-    	<li><a href="#Page">Page</a></li>
-      <li><a href="#Zone">Zone</a></li>
-      <li>Create</li>
-    </ol>
-    <h1>Create <span>Zone</span></h1>
-</div><!-- 'padding' -->
 
+  <ol class="breadcrumb">
+  	<li><a href="#Page">Page</a> <span class="divider">/</span></li>
+    <li>Create</li>
+  </ol>
+  
 <form class="form">
 
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
-    <a href="#Zone" class="button right submit margin_right_5">Cancel</a>
+  <div class="pull-right btn-group">
+    <a href="#Zone" class="btn">Cancel</a>
+    <a href="#null" class="btn btn-primary" id="save">Save</a>
   </div>
-  <div class="padding_20">
+  
+  <legend>Create Zone</legend>
 
-			<p class="clearfix">
-        <label>
-          Key</label>
-          <input name="key" />
-      </p>
-			<p class="clearfix">
-        <label>
-          Body</label>
-          <textarea name="content"></textarea>
-      </p>
-
-  </div><!-- 'padding' -->
+	<div class="control-group">
+    <label>
+      Key</label>
+      <input name="key" type="text" />
+  </div>
+	<div class="control-group">
+    <label>
+      Body</label>
+      <textarea name="content"></textarea>
+  </div>
 </form>
 </div>

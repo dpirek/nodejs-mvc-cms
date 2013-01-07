@@ -101,8 +101,16 @@
 			
 			// Bind From.
 			var form = $('form', content),
-					saveBtn = $('#save', content);
-			
+					saveBtn = $('#save', content),
+					titleInput = $('input[name="title"]', content),
+					urlInput = $('input[name="url"]', content),
+					createUrl = $('#createUrl', content);
+					
+			// Bind create url click.
+			createUrl.click(function(){
+				urlInput.val(MVC.util.string.createUrl(titleInput.val()));
+				return false;
+			});
 			// Bind save click.
 			saveBtn.click(function(){
 				

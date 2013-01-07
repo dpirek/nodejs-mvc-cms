@@ -1,14 +1,15 @@
 <div>
+	<ol class="breadcrumb">
+    <li>Files</li>
+  </ol>
 
-	<div class="padding">
-		<ol class="breadcrumbs">
-      <li>Files</li>
-    </ol>
-    <h1>Files <span></span></h1>
-    <a href="#File/Upload" class="button">Upload</a>
-	</div>
-
-	<table class="width_full data_table">
+	<div class="pull-right btn-group">
+    <a href="#File/Upload" class="btn btn-primary">Upload</a>
+  </div>
+	
+	<legend>File List</legend>
+	
+	<table class="table table-bordered table-striped">
 	  <thead>
 	    <tr>
 	      <th>
@@ -17,15 +18,13 @@
 	      <th>
 	        full path
 	      </th>
-	      <th></th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  {{each files}}
 	  <tr class="alt">
 			<td><a href="/content/files/${this}">${this}</a></td>
-			<td>/content/files/${this}</td>
-			<td><a href="${this}" class="right deleteFileBtn">delete</a></td>
+			<td>/content/files/${this} <a href="${this}" class="btn pull-right btn-mini btn-danger deleteFileBtn">delete</a></td>
 	  </tr>
 	  {{/each}}
 	  </tbody>

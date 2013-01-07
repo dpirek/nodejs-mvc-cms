@@ -1,4 +1,4 @@
-<div class="padding">
+<div class="">
     <ol class="breadcrumbs">
         <li>Pages</li>
     </ol>
@@ -21,6 +21,7 @@
 	      <th>
 	        Date
 	      </th>
+	      <th>User</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -29,6 +30,7 @@
 			<td><a href="#Blog/Edit/${url}"> ${title} </a></td>
 			<td><a href="/blog/${url}" target="_blank">${url}</a></td>
 			<td>{{html $item.date(date)}}</td>
+			<td>${user}</td>
 	  </tr>
 	  {{/each}}
 	  </tbody>

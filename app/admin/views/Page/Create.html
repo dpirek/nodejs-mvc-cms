@@ -1,38 +1,47 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-      <li><a href="#Page">Page</a></li>
+  
+  <div class="right_bar">
+    <h3>Page Info</h3>
+    <p>Preview <a href="/" target="_blank"></a></p>
+    
+    <h3>Keyword Density</h3>
+    
+     <div id="keywordDensityTemplate">
+    {{each stats.groupCount}}
+      ${key} ${percentage}% <br />
+    {{/each}}
+    </div>
+    
+  </div>
+  
+  <div class="left_bar">
+    <ol class="breadcrumb">
+      <li><a href="#Page">Pages</a> <span class="divider">/</span></li>
       <li>Create</li>
     </ol>
-    <h1>Create <span>Page</span></h1>
-</div><!-- 'padding' -->
+    
+    <form class="form form-inline">
+      <div class="pull-right btn-group">
+        <a href="#Page" class="btn">Cancel</a>
+        <a href="#null" class="btn btn-primary" id="save">Save</a>
+      </div>
 
-<form class="form">
-  <input name="user" type="hidden" value="" />
+      <input name="user" type="hidden" value="" />
 
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
-    <a href="#Page" class="button right submit margin_right_5">Cancel</a>
+      <legend>Create Page</legend>
+      <div class="margin_bottom">
+        <label class="control-label">Page Title</label>
+        <input name="title" type="text"  />
+
+        <label class="control-label margin_left">Page Url</label>
+        <div class="input-append">  
+          <input name="url" type="text" /> 
+          <a href="#" id="createUrl" class="btn">create</a>
+        </div>
+      </div>
+  		<div class="control-group">
+        <textarea name="body"></textarea>
+      </div>
+    </form>
   </div>
-
-    <div class=" padding_20">
-    	<p class="clearfix">
-        <label>
-          Title</label>
-          <input name="title" />
-      </p>
-			<p class="clearfix">
-        <label>
-          Url</label>
-          <input name="url" />
-      </p>
-
-			<p class="clearfix">
-        <label>
-          Body</label>
-          <textarea name="body"></textarea>
-      </p>
-
-  </div><!-- 'padding' -->
-</form>
 </div>

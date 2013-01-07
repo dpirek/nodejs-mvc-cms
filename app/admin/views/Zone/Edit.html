@@ -1,29 +1,22 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-    	<li><a href="#Page">Pages</a></li>
-      <li><a href="#Zone">Zones</a></li>
-      <li>Edit</li>
-    </ol>
-    <h1>E <span>Z</span></h1>
-</div><!-- 'padding' -->
+  <ol class="breadcrumb">
+    <li><a href="#Zone">Zones</a> <span class="divider">/</span></li>
+    <li>Edit ${zone.key}</li>
+  </ol>
 
-<form class="form">
-  <input name="key" type="hidden" value="${zone.key}" />
+  <form class="form">
+    <input name="key" type="hidden" value="${zone.key}" />
 
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
-    <a href="#null" class="button right submit margin_right_5" id="delete">Delete</a>
-    <a href="#Zone" class="button right submit margin_right_5">Cancel</a>
-  </div>
-  <div class="padding_20">
-
-			<p class="clearfix">
-        <label>
-          Body</label>
-          <textarea name="content">${zone.content}</textarea>
-      </p>
-
-  </div><!-- 'padding' -->
-</form>
+    <div class="pull-right btn-group">
+      <a href="#null" class="btn" id="delete">Delete</a>
+      <a href="#Zone" class="btn">Cancel</a>
+      <a href="#null" class="btn btn-primary" id="save">Save</a>
+    </div>
+    
+    <legend>Edit Zone <strong>${zone.key}</strong></legend>
+    
+    <label>
+      Body</label>
+      <textarea name="content">${zone.content}</textarea>
+  </form>
 </div>

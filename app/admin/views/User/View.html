@@ -1,19 +1,20 @@
 <div>
-	<div class="padding">
-	  <ol class="breadcrumbs">
-	  	<li><a href="#Admin">Admin</a></li>
-	    <li><a href="#User">User</a></li>
-	    <li>Edit: ${user.name}</li>
-	  </ol>
-	  <h1>Edit User: <span>${user.name}</span></h1>
-	</div><!-- 'padding' -->
-	
+
+  <ol class="breadcrumb">
+    <li><a href="#User">User</a> <span class="divider">/</span></li>
+    <li>Edit: ${user.name}</li>
+  </ol>
+
 	<form class="form" action="/campaign/submit" method="post">
 	  <input name="id" type="hidden" />
-	  <div class="clearfix action_bar">
-	  	<a href="#User/Edit/${user.guid}" class="button right margin_right_5">Edit</a>
-	  	<a href="#null" id="deleteBtn" class="button right margin_right_5 ">Delete</a>
+	  
+	  <div class="pull-right btn-group">
+	   <a href="#null" id="deleteBtn" class="btn">Delete</a>
+	   <a href="#User" class="btn">Cancel</a>
+	   <a href="#User/Edit/${user.guid}" class="btn btn-primary">Edit</a>
 	  </div>
+	  
+	  <legend>Edit User: <strong >${user.name}</strong></legend>
 	  
 		<div class="padding clearfix">
 			<p>

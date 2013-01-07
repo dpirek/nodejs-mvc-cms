@@ -1,15 +1,9 @@
 // Lib.
 var tmpl = require('jqtpl'),
-		c = require('../../config'),
-		Mongolian = require("mongolian");
+		dbAcccess = require('../lib/db.access'),
+		c = require('../../config');
 
-// Db.
-var server = new Mongolian(c.config.dbConnection),
-		db = server.db(c.config.dbName);
-
-if(c.config.dbConnection !== 'localhost'){
-	db.auth(c.config.dbUserName, c.config.dbPassword);
-}
+var db = dbAcccess.get();
 
 var zones = db.collection("zones");
 
@@ -19,7 +13,6 @@ exports.get = function(obj, callBack){
 	if(obj.action === 'list'){
 
 		zones.find().limit(5).toArray(function (err, list) {
-         			
 			callBack(list);
 		});
 	} else if(obj.action === 'view'){

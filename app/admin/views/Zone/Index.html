@@ -1,20 +1,15 @@
-<div class="padding">
-    <ol class="breadcrumbs">
-        <li><a href="#Page">Pages</a></li>
-        <li>Zones</li>
-    </ol>
-    <h1>Zone <span>List</span></h1>
-</div><!-- 'padding' -->
+<div>
+  <ol class="breadcrumb">
+    <li>Zones</li>
+  </ol>
 
-<div class="padding">
-  
-  <div class="clearfix">
-  	<a href="#Zone/Create" class="button">Create New</a>
-  	{{html $item.paging()}}
+  <div class="pull-right btn-group">
+  	<a href="#Zone/Create" class="btn btn-primary">Create New</a>
   </div>
-</div>
 
-	<table class="width_full data_table">
+  <legend>Zone List</legend>
+
+	<table class="table table-bordered table-striped">
 	  <thead>
 	    <tr>
 	      <th>
@@ -34,4 +29,4 @@
 	  {{/each}}
 	  </tbody>
 	</table>
-</div><!-- 'padding' -->
+</div>

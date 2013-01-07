@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-mvc-cms",
+  "version": "2.0.0",
+  "description": "Node.js MVC CMS",
+  "dependencies": {
+    "mongolian": "*",
+    "jqtpl": "*",
+    "lightnode": "*"
+  }
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/dpirek/nodejs-mvc-cms.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "contributors": [
+    "David Pirek <dpirek@gmail.com> (http://www.davidpirek.com)"
+  ]
+}

@@ -118,16 +118,16 @@
 						MVC.message.hideLoader();
 						
 						var controllerName = d.actionObject.controller,
-								allMenuItems = $('a', menuHtml),
-								currentMenuItem = $('a:[href^="#' + controllerName + '"]', menuHtml),
-								childMenuItemParent = $('a:[childUrls*="' + controllerName + '"]', menuHtml);
+								allMenuItems = $('a', menuHtml)
+								//currentMenuItem = $('a:[href^="#' + controllerName + '"]', menuHtml),
+								//childMenuItemParent = $('a:[childUrls*="' + controllerName + '"]', menuHtml);
 						
 						// Remove highliting.
 						allMenuItems.removeClass('selected');
 						
 						// Add highlighting.
-						currentMenuItem.addClass('selected');
-						childMenuItemParent.addClass('selected')
+						//currentMenuItem.addClass('selected');
+						//childMenuItemParent.addClass('selected')
 						
 						// Build side nav.
 						if(sideMenuObj[controllerName]){

@@ -1,26 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/admin/content/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>CMS Admin</title>
-  <link href="content/css/1.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
 
-<body>
 	<div id="message_wrp"><div id="message_box" class="hide"></div></div>
-  <div class="full_col" style="width:264px; margin:20px auto;">
+  <div class="full_col" style="width:225px; margin:20px auto;">
       <div id="content">
         <div class="clearfix">
             <form id="login_form" class="clearfix hide" onsubmit="return false" method="post">
               <div class="padding_20">
-              	<div>
-              		<h1>User <span>Login</span></h1>
-              	</div>
+              	<legend>User Login</legend>
 	              <p>
 	                <label for="name">
 	                  User Name</label>
-	                <input name="name" class="userName" style="width: 200px; font-size:20px; padding:10px;">
+	                <input name="name" class="userName" type="text" style="width: 200px; font-size:20px; padding:10px;">
 	              </p>
 	              <p>
 	                <label for="password">
@@ -29,7 +28,7 @@
 	              </p>
 	              
 								<div class="clearfix">
-									<button class="button submit right">Submit</button>
+									<button class="btn btn-primary btn-large submit">Submit</button>
 	              </div>
               </div>
             </form>
@@ -82,7 +81,25 @@
 		});
 	}());
   </script>
+  
+  
+  <script type="text/javascript">
+  /*
+    MVC.service.send({
+			data: {
+			 name: 'dave',
+			 password: 'test'
+			},
+			url: 'user/login',
+      success: function (d) {
 
-</body>
+      	// Show message.
+      	window.location.href = '/admin#Listing'
+      }
+    });
+  */
+  </script>
+
+  </body>
 
 </html>

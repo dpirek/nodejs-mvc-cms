@@ -286,7 +286,7 @@
               if (isSuccessful) {
 
                 // Check if action is defined inside of the controller.
-                if (typeof controllerObject[action] == "undefined") {
+                if (typeof controllerObject[action] === "undefined") {
 
                   // Put action HTML to the DOM.
                   contentDiv.html(defaults.errorMessage);

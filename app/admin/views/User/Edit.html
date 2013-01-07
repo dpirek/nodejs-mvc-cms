@@ -1,37 +1,35 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-    	<li><a href="#Admin">Admin</a></li>
-      <li><a href="#User">User</a></li>
-      <li>Edit</li>
-    </ol>
-    <h1>Edit User <span>Account</span></h1>
-</div><!-- 'padding' -->
+  <ol class="breadcrumb">
+    <li><a href="#User">User</a> <span class="divider">/</span></li>
+    <li>Edit</li>
+  </ol>
 
-<form class="form" action="/campaign/submit" method="post">
-  <input name="guid" type="hidden" value="${user.guid}" />
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="saveBtn">Submit</a>
-    <a href="#User/View/${user.userId}" class="button right margin_right">Cancel</a>
-  </div>
-  <div class="padding">
+  <form class="form" action="/campaign/submit" method="post">
+    <input name="guid" type="hidden" value="${user.guid}" />
+    
+    <div class="pull-right btn-group">
+      <a href="#User/View/${user.guid}" class="btn">Cancel</a>
+      <a href="#null" class="btn btn-primary" id="saveBtn">Save</a>
+    </div>
+    
+    <legend>Edit User</legend>
+    
     <div class="two_col_form">
-     	<p class="clearfix">
+     	<div class="control-group">
         <label for="name">
           User Name</label>
-          <input name="name" value="${user.name}" />
-      </p>
-			<p class="clearfix">
+          <input name="name" type="text" value="${user.name}" />
+      </div>
+      <div class="control-group">
         <label for="name">
           E-mail</label>
-          <input name="email" value="${user.email}" />
-      </p>
-			<p class="clearfix">
+          <input name="email" type="text" value="${user.email}" />
+      </div>
+      <div class="control-group">
         <label for="name">
           password</label>
           <input name="password" type="password" value="${user.password}" />
-      </p>
+      </div>
 		</div>
-  </div><!-- 'padding' -->
-</form>
+  </form>
 </div>

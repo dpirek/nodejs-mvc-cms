@@ -1,16 +1,10 @@
 
 // Libs.
 var tmpl = require('jqtpl'),
-		c = require('../../config'),
-		Mongolian = require("mongolian");
+		dbAcccess = require('../lib/db.access'),
+		c = require('../../config');
 
-// Db.
-var server = new Mongolian(c.config.dbConnection),
-		db = server.db(c.config.dbName);
-		
-if(c.config.dbConnection !== 'localhost'){
-	db.auth(c.config.dbUserName, c.config.dbPassword);
-}
+var db = dbAcccess.get();
 
 var pages = db.collection("pages"),
 		zonesDb = db.collection("zones");

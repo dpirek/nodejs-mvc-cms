@@ -1,48 +1,47 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-    	<li><a href="#Admin">Admin</a></li>
-      <li><a href="#Organizations">User</a></li>
-      <li>Create</li>
-    </ol>
-    <h1>New User <span>Account</span></h1>
-</div><!-- 'padding' -->
 
-<form class="form">
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="saveBtn">Submit</a>
-    <a href="#User" class="button right margin_right">Cancel</a>
-  </div>
-  <div class="padding">
-    <h2>User Info</h2>
-    <div class="section two_col_form">
-
-			<p class="clearfix">
-        <label>
-          User Type</label>
-          <select name="userType">
-          	<option value="admin">Admin</option>
-          	<option value="user" selected="selected">User</option>
-          </select>
-      </p>
-
-			<p class="clearfix">
-        <label>
-          User Name</label>
-          <input name="name" />
-      </p>
-       <p class="clearfix">
-        <label>
-          Password</label>
-          <input name="password" type="password" />
-      </p>
-
-      <p class="clearfix">
-        <label>
-          E-mail</label>
-          <input name="email" />
-      </p>
+  <ol class="breadcrumb">
+    <li><a href="#User">User</a> <span class="divider">/</span></li>
+    <li>Create</li>
+  </ol>
+  
+  <form class="form">
+  
+    <div class="pull-right btn-group">
+      <a href="#User" class="btn">Cancel</a>
+      <a href="#null" class="btn btn-primary" id="saveBtn">Submit</a>
     </div>
-  </div><!-- 'padding' -->
-</form>
+    
+    <legend>New User</legend>
+    
+    <div class="">
+      <div class="two_col_form">
+  			<div class="control-group">
+          <label>
+            User Type</label>
+            <select name="userType">
+            	<option value="admin">Admin</option>
+            	<option value="user" selected="selected">User</option>
+            </select>
+        </div>
+  
+  			<div class="control-group">
+          <label>
+            User Name</label>
+            <input type="text" name="name" />
+        </div>
+         <div class="control-group">
+          <label>
+            Password</label>
+            <input type="text" name="password" type="password" />
+        </div>
+  
+        <div class="control-group">
+          <label>
+            E-mail</label>
+            <input type="text" name="email" />
+        </div>
+      </div>
+    </div><!-- 'padding' -->
+  </form>
 </div>

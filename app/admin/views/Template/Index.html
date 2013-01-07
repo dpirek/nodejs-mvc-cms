@@ -1,21 +1,20 @@
 <div>
-<div class="padding">
-    <ol class="breadcrumbs">
-    	<li><a href="#Page">Page</a></li>
-      <li><a href="#Template">Template</a></li>
-      <li>Edit</li>
-    </ol>
-    <h1>Edit <span>Temp</span></h1>
-</div><!-- 'padding' -->
+  <ol class="breadcrumb">
+    <li><a href="#Template">Template</a> <span class="divider">/</span></li>
+    <li>Edit</li>
+  </ol>
+  <a href="#null" class="btn-primary pull-right btn submit" id="save">Save</a>
+  <form class="form" action="/campaign/submit" method="post">
+  
+    <legend>Edit <span>Temp</span></legend>
 
-<form class="form" action="/campaign/submit" method="post">
-  <div class="clearfix action_bar">
-    <a href="#null" class="button right submit margin_right_5" id="save">Save</a>
-  </div>
-  
-	<p class="clearfix">
-      <div name="content" id="editor" class="file-editor-textarea" rows="35" name="value" data-language="HTML" data-filename="detail.html">${template.content}</div>
-  </p>
-  
-</form>
+    <div name="content" 
+      id="editor" 
+      class="file-editor-textarea" 
+      rows="35" 
+      name="value" 
+      data-language="HTML" 
+      data-filename="detail.html">${template.content}</div>
+    
+  </form>
 </div>

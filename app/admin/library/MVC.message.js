@@ -16,7 +16,7 @@
     
     MVC.message = {
     	show: function(settings){
-
+        
     		messageBox.text(settings.text).show();
     		
     		// Hide message if delay is specified.
