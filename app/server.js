@@ -1,6 +1,6 @@
 // References.
 var http = require('http'),
-    lightnode = require('lightnode'),
+    lightnode = require('.lib//lightnode'),
     c = require('../config'),
     routes = require('./lib/routes'),
     file = require('./lib/util.file'),
