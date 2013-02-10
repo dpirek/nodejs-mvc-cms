@@ -7,7 +7,7 @@
     "jqtpl": "*",
     "formidable": "*",
     "lightnode": "*"
-  }
+  },
   "repository": {
     "type" : "git",
     "url" : "https://github.com/dpirek/nodejs-mvc-cms.git"
