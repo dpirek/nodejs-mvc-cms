@@ -4,7 +4,7 @@
   "description": "Node.js MVC CMS",
   "dependencies": {
     "mongolian": "*",
-    "jqtpl": "*",
+    "jqtpl":"< 2.0",
     "formidable": "*",
     "lightnode": "*"
   },
