@@ -8,7 +8,4 @@
 ## CONTACT:
 David Pirek
 dpirek@gmail.com
-http://www.davidpirek.com
-
-## PROJECT LINK:
-http://www.nodejsmvc.com
+https://www.davidpirek.com
