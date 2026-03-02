@@ -7,11 +7,7 @@
     "db:init": "node scripts/init-db.js",
     "db:seed": "node scripts/init-db.js --seed"
   },
-  "dependencies": {
-    "jqtpl":"< 2.0",
-    "formidable": "*",
-    "lightnode": "*"
-  },
+  "dependencies": {},
   "repository": {
     "type" : "git",
     "url" : "https://github.com/dpirek/nodejs-mvc-cms.git"

@@ -1,6 +1,5 @@
 // Lib.
-var tmpl = require('jqtpl'),
-		dbAcccess = require('../lib/db.access'),
+var dbAcccess = require('../lib/db.access'),
 		c = require('../../config');
 
 var db = dbAcccess.get();

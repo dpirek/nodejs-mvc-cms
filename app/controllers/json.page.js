@@ -1,6 +1,5 @@
 // Lib.
-var tmpl = require('jqtpl'),
-		a = require('../lib/util.array'),
+var a = require('../lib/util.array'),
 		dbAcccess = require('../lib/db.access'),
 		c = require('../../config');
 

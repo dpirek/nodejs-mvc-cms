@@ -1,6 +1,6 @@
 
 // Libs.
-var tmpl = require('jqtpl'),
+var tmpl = require('../lib/jqtpl'),
 		dbAcccess = require('../lib/db.access'),
 		c = require('../../config');
 

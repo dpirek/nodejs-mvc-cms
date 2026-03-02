@@ -1,7 +1,6 @@
 // Lib.
-var tmpl = require('jqtpl'),
-		fs = require('fs'),
-		util = require('../lib/util.string');
+var fs = require('fs'),
+		util = require('../lib/util.string'),
 		dbAcccess = require('../lib/db.access'),
 		c = require('../../config');
 
