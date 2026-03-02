@@ -1,13 +1,13 @@
 <div>
 
   <ol class="breadcrumb">
-    <li><a href="#User">User</a> <span class="divider">/</span></li>
+    <li><a href="#User">User</a></li>
     <li>Create</li>
   </ol>
   
   <form class="form">
   
-    <div class="pull-right btn-group">
+    <div class="float-end btn-group">
       <a href="#User" class="btn">Cancel</a>
       <a href="#null" class="btn btn-primary" id="saveBtn">Submit</a>
     </div>
@@ -16,30 +16,30 @@
     
     <div class="">
       <div class="two_col_form">
-  			<div class="control-group">
+  			<div class="mb-3">
           <label>
             User Type</label>
-            <select name="userType">
+            <select name="userType" class="form-select">
             	<option value="admin">Admin</option>
             	<option value="user" selected="selected">User</option>
             </select>
         </div>
   
-  			<div class="control-group">
+  			<div class="mb-3">
           <label>
             User Name</label>
-            <input type="text" name="name" />
+            <input type="text" name="name" class="form-control" />
         </div>
-         <div class="control-group">
+         <div class="mb-3">
           <label>
             Password</label>
-            <input type="text" name="password" type="password" />
+            <input type="password" name="password" class="form-control" />
         </div>
   
-        <div class="control-group">
+        <div class="mb-3">
           <label>
             E-mail</label>
-            <input type="text" name="email" />
+            <input type="text" name="email" class="form-control" />
         </div>
       </div>
     </div><!-- 'padding' -->

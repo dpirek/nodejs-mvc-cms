@@ -1,13 +1,13 @@
 <div>
   <ol class="breadcrumb">
-    <li><a href="#User">User</a> <span class="divider">/</span></li>
+    <li><a href="#User">User</a></li>
     <li>Edit</li>
   </ol>
 
   <form class="form" action="/campaign/submit" method="post">
     <input name="guid" type="hidden" value="${user.guid}" />
     
-    <div class="pull-right btn-group">
+    <div class="float-end btn-group">
       <a href="#User/View/${user.guid}" class="btn">Cancel</a>
       <a href="#null" class="btn btn-primary" id="saveBtn">Save</a>
     </div>
@@ -15,20 +15,20 @@
     <legend>Edit User</legend>
     
     <div class="two_col_form">
-     	<div class="control-group">
+     	<div class="mb-3">
         <label for="name">
           User Name</label>
-          <input name="name" type="text" value="${user.name}" />
+          <input name="name" type="text" class="form-control" value="${user.name}" />
       </div>
-      <div class="control-group">
+      <div class="mb-3">
         <label for="name">
           E-mail</label>
-          <input name="email" type="text" value="${user.email}" />
+          <input name="email" type="text" class="form-control" value="${user.email}" />
       </div>
-      <div class="control-group">
+      <div class="mb-3">
         <label for="name">
           password</label>
-          <input name="password" type="password" value="${user.password}" />
+          <input name="password" type="password" class="form-control" value="${user.password}" />
       </div>
 		</div>
   </form>

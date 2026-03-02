@@ -16,12 +16,12 @@
   
   <div class="left_bar">
     <ol class="breadcrumb">
-      <li><a href="#Page">Pages</a> <span class="divider">/</span></li>
+      <li><a href="#Page">Pages</a></li>
       <li>Create</li>
     </ol>
     
-    <form class="form form-inline">
-      <div class="pull-right btn-group">
+    <form class="form">
+      <div class="float-end btn-group">
         <a href="#Page" class="btn">Cancel</a>
         <a href="#null" class="btn btn-primary" id="save">Save</a>
       </div>
@@ -30,17 +30,17 @@
 
       <legend>Create Page</legend>
       <div class="margin_bottom">
-        <label class="control-label">Page Title</label>
-        <input name="title" type="text"  />
+        <label class="form-label">Page Title</label>
+        <input name="title" type="text" class="form-control" />
 
-        <label class="control-label margin_left">Page Url</label>
-        <div class="input-append">  
-          <input name="url" type="text" /> 
-          <a href="#" id="createUrl" class="btn">create</a>
+        <label class="form-label margin_left">Page Url</label>
+        <div class="input-group">  
+          <input name="url" type="text" class="form-control" />
+          <a href="#" id="createUrl" class="btn btn-outline-secondary">create</a>
         </div>
       </div>
-  		<div class="control-group">
-        <textarea name="body"></textarea>
+  		<div class="mb-3">
+        <textarea name="body" class="form-control"></textarea>
       </div>
     </form>
   </div>

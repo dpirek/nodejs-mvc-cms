@@ -3,7 +3,7 @@
     <li>Files</li>
   </ol>
 
-	<div class="pull-right btn-group">
+	<div class="float-end btn-group">
     <a href="#File/Upload" class="btn btn-primary">Upload</a>
   </div>
 	
@@ -24,7 +24,7 @@
 	  {{each files}}
 	  <tr class="alt">
 			<td><a href="/content/files/${this}">${this}</a></td>
-			<td>/content/files/${this} <a href="${this}" class="btn pull-right btn-mini btn-danger deleteFileBtn">delete</a></td>
+			<td>/content/files/${this} <a href="${this}" class="btn float-end btn-sm btn-danger deleteFileBtn">delete</a></td>
 	  </tr>
 	  {{/each}}
 	  </tbody>

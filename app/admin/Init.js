@@ -18,9 +18,9 @@
 						childItems.append(d.url + ' ');
 					});
 					
-					sb.append('<li><a href="#' + d.url + '" childUrls="' + childItems.toString() + '">' + d.text + '</a></li>');
+					sb.append('<li class="nav-item"><a class="nav-link" href="#' + d.url + '" childUrls="' + childItems.toString() + '">' + d.text + '</a></li>');
 				} else {
-					sb.append('<li><a href="#' + d.url + '">' + d.text + '</a></li>');
+					sb.append('<li class="nav-item"><a class="nav-link" href="#' + d.url + '">' + d.text + '</a></li>');
 				}
 			});
 		
@@ -31,7 +31,7 @@
 			var sb = MVC.util.string.stringBuilder();
 		
 			$.each(d, function(i, d){
-				sb.append('<li><a href="#' + d.url + '">' + d.text + '</a></li>');
+				sb.append('<li class="nav-item"><a class="nav-link" href="#' + d.url + '">' + d.text + '</a></li>');
 			});
 			
 			return '';

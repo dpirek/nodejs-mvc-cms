@@ -1,14 +1,14 @@
 <div>
 
   <ol class="breadcrumb">
-    <li><a href="#User">User</a> <span class="divider">/</span></li>
+    <li><a href="#User">User</a></li>
     <li>Edit: ${user.name}</li>
   </ol>
 
 	<form class="form" action="/campaign/submit" method="post">
 	  <input name="id" type="hidden" />
 	  
-	  <div class="pull-right btn-group">
+	  <div class="float-end btn-group">
 	   <a href="#null" id="deleteBtn" class="btn">Delete</a>
 	   <a href="#User" class="btn">Cancel</a>
 	   <a href="#User/Edit/${user.guid}" class="btn btn-primary">Edit</a>
