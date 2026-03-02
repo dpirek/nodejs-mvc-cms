@@ -1,6 +1,6 @@
 const http = require('http');
 const lightnode = require('./lib/lightnode');
-const c = require('../config');
+const c = require('./config');
 const routes = require('./lib/routes');
 const file = require('./lib/util.file');
 const jsonRoutes = require('./lib/json.routes');

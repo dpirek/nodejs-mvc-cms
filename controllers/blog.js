@@ -2,7 +2,7 @@
 var tmpl = require('../lib/jqtpl'),
 		s = require('../lib/util.string'),
 		dbAcccess = require('../lib/db.access'),
-		c = require('../../config');
+		c = require('../config');
 
 var db = dbAcccess.get();
 

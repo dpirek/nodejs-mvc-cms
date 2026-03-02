@@ -1,5 +1,5 @@
 // Lib.
-var c = require('../../config'),
+var c = require('../config'),
 		fs = require('fs'),
 		a = require('../lib/util.array');
 		

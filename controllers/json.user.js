@@ -2,7 +2,7 @@
 var fs = require('fs'),
 		util = require('../lib/util.string'),
 		dbAcccess = require('../lib/db.access'),
-		c = require('../../config');
+		c = require('../config');
 
 var db = dbAcccess.get();
 

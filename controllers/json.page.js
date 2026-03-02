@@ -1,7 +1,7 @@
 // Lib.
 var a = require('../lib/util.array'),
 		dbAcccess = require('../lib/db.access'),
-		c = require('../../config');
+		c = require('../config');
 
 var db = dbAcccess.get();
 

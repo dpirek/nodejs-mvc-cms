@@ -1,5 +1,5 @@
 var fs = require('fs'),
-		c = require('../../config');
+		c = require('../config');
 
 // HTTP content getter.
 exports.get = function(params, callBack){

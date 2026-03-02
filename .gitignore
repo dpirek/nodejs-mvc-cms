@@ -1,2 +1,9 @@
+# Ignore node modules and database files
 node_modules
+
+# Ignore SQLite database files
 db/*.sqlite
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db

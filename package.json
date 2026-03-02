@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Node.js MVC CMS",
   "scripts": {
-    "start": "node app/server.js",
+    "start": "node server.js",
     "db:init": "node scripts/init-db.js",
     "db:seed": "node scripts/init-db.js --seed"
   },
